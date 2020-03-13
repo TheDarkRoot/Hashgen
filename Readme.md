@@ -10,12 +10,14 @@
 
 
 # Description
+
 - Generate more 39 type hash.
 
 # Features
-- [x] **Supports Linux platform.**
-- [x] **Fast encrypting.**
-- [x] **List of hash types:**
+
+- [x] Supports Linux platform.
+- [x] Fast encrypting.
+- [x] List of hash types:
 ```
 [01] > MySQL 3.2.3
 [02] > MySQL 4.1
@@ -57,7 +59,10 @@
 [38] > Cisco Type 7
 [39] > FHSP
 ```
+
 # Installation
+
+> ***Open the terminal and type following commands.***
 ```
 $ pkg update upgrade
 $ pkg install git python2
@@ -65,6 +70,7 @@ $ git clone https://github.com/TheDarkRoot/Hashgen.git
 $ cd Hashgen
 $ python2 Hashgen.py
 ```
+
 # Screenshot
 
 [<img src="https://raw.githubusercontent.com/TheDarkRoot/PNGStore/master/Personal/Screenshots/Hashgen%2001.png" width=175>](https://raw.githubusercontent.com/TheDarkRoot/PNGStore/master/Personal/Screenshots/Hashgen%2001.png)
