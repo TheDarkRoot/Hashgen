@@ -138,18 +138,10 @@ def Update():
 	else:
 		print ("Sorry, Hashgen update feature is only available on linux platform.\n")
 		sys.exit()
- 
+
 try:
     banner()
     x = raw_input(BB+"["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
-    
-	if sys.argv[1] == "-u":
-		Update()
-	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
-		info()
-	else:
-		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
-		sys.exit()
 
 except NameError:
 	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
@@ -363,6 +355,16 @@ fhsp = m25.encrypt(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.")
+sys.exit()
+ 
+try:
+	if sys.argv[1] == "-u":
+		Update()
+	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+		info()
+	else:
+		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+		sys.exit()
 
 except IndexError:
 	sys.exit()
