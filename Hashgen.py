@@ -41,20 +41,105 @@ elif sys.platform == "win32":
 try:
 	import passlib , progressbar
 except ImportError:
-	print (R+"\n["+W+"!"+R+"] "+G+"module "+W+"passlib or progressbar"+G+"not installed"+W+"\n")
-	sys.exit()
+        banner()
+	time.sleep(0.5)
+        print (BB+"["+WW+"="+BB+"] "+GG+"installing module "+RR+"progressbar, passlib.\n"+W)
 
-os.system
-print (CC+'\n              Hash Generator'+GG+' v1.0.0')
-print (P+'  #      #'+WW+' #########################################')
-print (P+'  #      #   ##    ####  #    #  ####  ###### #    # ')
-print (P+'  #      #  #  #  #      #    # #    # #      ##   # ')
-print (P+'  ######## #    #  ####  ###### #      #####  # #  # ')
-print (P+'  #      # ######      # #    # #  ### #      #  # # ')
-print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
-print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
-print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
+	os.system("pip2 install --upgrade pip")
+	os.system("pip2 install passlib")
+	os.system("pip2 install progressbar")
 
+	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
+        sys.exit()
+
+def banner():
+    print (CC+'\n              Hash Generator'+GG+' v1.0.0')
+    print (P+'  #      #'+WW+' #########################################')
+    print (P+'  #      #   ##    ####  #    #  ####  ###### #    # ')
+    print (P+'  #      #  #  #  #      #    # #    # #      ##   # ')
+    print (P+'  ######## #    #  ####  ###### #      #####  # #  # ')
+    print (P+'  #      # ######      # #    # #  ### #      #  # # ')
+    print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
+    print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
+    print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
+    print (P+"            python2 "+sys.argv[0]+" --info\n"+W)
+ 
+def info():
+    print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Name     "+CC+":"+WW+" Hashgen"+GG+"                               |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Code     "+CC+":"+WW+" Python2"+GG+"                              |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Version  "+CC+":"+WW+" v1.0.0 (Alpha)"+GG+"                       |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Author   "+CC+":"+WW+" TheDarkRoot"+GG+"                          |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Email    "+CC+":"+WW+" 7H3D4RKR007@gmail.com"+GG+"                |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Github   "+CC+":"+WW+" https://github.com/TheDarkRoot"+GG+"       |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Telegram "+CC+":"+WW+" @TDarkRoot (https://t.me/TDarkRoot)"+GG+"  |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Team     "+CC+":"+WW+" TurkHackTeam (www.turkhackteam.org)"+GG+"  |")
+    print (GG+" 0{===================================================}0\n")
+    print (BB+" ["+RR+"="+BB+"] "+WW+"python2 "+sys.argv[0]+" -u")
+    print (BB+"\n ["+RR+"="+BB+"] "+WW+"To Update Hashgen.py")
+    print (BB+"\n ["+RR+"="+BB+"] "+WW+"List of supported hashes:")
+    print (YY+"\n                          ["+WW+"01"+YY+"] "+CC+"MySQL 3.2.3")
+    print (YY+"                          ["+WW+"02"+YY+"] "+CC+"MySQL 4.1")
+    print (YY+"                          ["+WW+"03"+YY+"] "+CC+"MSSQL 2000")
+    print (YY+"                          ["+WW+"04"+YY+"] "+CC+"MSSQL 2005")
+    print (YY+"                          ["+WW+"05"+YY+"] "+CC+"MD4")
+    print (YY+"                          ["+WW+"06"+YY+"] "+CC+"MD5")
+    print (YY+"                          ["+WW+"07"+YY+"] "+CC+"SHA1")
+    print (YY+"                          ["+WW+"08"+YY+"] "+CC+"SHA224")
+    print (YY+"                          ["+WW+"09"+YY+"] "+CC+"SHA256")
+    print (YY+"                          ["+WW+"10"+YY+"] "+CC+"SHA384")
+    print (YY+"                          ["+WW+"11"+YY+"] "+CC+"SHA512")
+    print (YY+"                          ["+WW+"12"+YY+"] "+CC+"RIPEMD160")
+    print (YY+"                          ["+WW+"13"+YY+"] "+CC+"WHIRLPOOL")
+    print (YY+"                          ["+WW+"14"+YY+"] "+CC+"CRC32")
+    print (YY+"                          ["+WW+"15"+YY+"] "+CC+"ADLER32")
+    print (YY+"                          ["+WW+"16"+YY+"] "+CC+"DES Crypt")
+    print (YY+"                          ["+WW+"17"+YY+"] "+CC+"BSDi Crypt")
+    print (YY+"                          ["+WW+"18"+YY+"] "+CC+"BIGCrypt")
+    print (YY+"                          ["+WW+"19"+YY+"] "+CC+"Crypt16")
+    print (YY+"                          ["+WW+"20"+YY+"] "+CC+"MD5 Crypt")
+    print (YY+"                          ["+WW+"21"+YY+"] "+CC+"SHA1 Crypt")
+    print (YY+"                          ["+WW+"22"+YY+"] "+CC+"SHA256 Crypt")
+    print (YY+"                          ["+WW+"23"+YY+"] "+CC+"SHA512 Crypt")
+    print (YY+"                          ["+WW+"24"+YY+"] "+CC+"Sun MD5 Crypt")
+    print (YY+"                          ["+WW+"25"+YY+"] "+CC+"Apr MD5 Crypt")
+    print (YY+"                          ["+WW+"26"+YY+"] "+CC+"PHPASS")
+    print (YY+"                          ["+WW+"27"+YY+"] "+CC+"CTA PBKDF2 SHA1")
+    print (YY+"                          ["+WW+"28"+YY+"] "+CC+"Dlitz PBDKF2 SHA1")
+    print (YY+"                          ["+WW+"29"+YY+"] "+CC+"Atlassian's PBKDF2")
+    print (YY+"                          ["+WW+"30"+YY+"] "+CC+"Django PBKDF2 SHA1")
+    print (YY+"                          ["+WW+"31"+YY+"] "+CC+"Django PBKDF2 SHA256")
+    print (YY+"                          ["+WW+"32"+YY+"] "+CC+"Grub's PBKDF2")
+    print (YY+"                          ["+WW+"33"+YY+"] "+CC+"SCRAM Hash")
+    print (YY+"                          ["+WW+"34"+YY+"] "+CC+"BSD nthash")
+    print (YY+"                          ["+WW+"35"+YY+"] "+CC+"Oracle11")
+    print (YY+"                          ["+WW+"36"+YY+"] "+CC+"LanManager Hash")
+    print (YY+"                          ["+WW+"37"+YY+"] "+CC+"Windows NT-Hash")
+    print (YY+"                          ["+WW+"38"+YY+"] "+CC+"Cisco Type 7")
+    print (YY+"                          ["+WW+"39"+YY+"] "+CC+"FHSP\n"+W)
+
+def Update():
+	if sys.platform == "linux" or sys.platform == "linux2":
+		print (BB+" 0={"+WW+" Update wordlist. "+BB+"}=0\n")
+		time.sleep(1)
+
+		print (BB+"["+WW+"="+BB+"] "+GG+"Remove old wordlist.")
+		os.system("rm -rf Hashgen.py")
+		time.sleep(1)
+
+		print (BB+"["+WW+"="+BB+"] "+GG+"Downloading Hashgen.")
+		time.sleep(1)
+
+		print (RR+"["+WW+"*"+RR+"] "+RR+"Curl Started...\n"+W)
+
+		os.system("curl https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.py")
+
+		print (RR+"\n["+WW+"*"+RR+"] "+GG+"Download finish.\n"+W)
+		sys.exit()
+	else:
+		print ("Sorry, Hashgen update feature is only available on linux platform.\n")
+		sys.exit()
+ 
 try:
 	x = raw_input(BB+"\n["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
 except NameError:
@@ -269,3 +354,16 @@ fhsp = m25.encrypt(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.")
+
+try:
+	if sys.argv[1] == "-u":
+		Update()
+	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+		info()
+	else:
+		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+		sys.exit()
+
+except IndexError:
+    banner()
+
