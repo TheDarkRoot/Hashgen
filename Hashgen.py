@@ -147,6 +147,7 @@ def Update():
 
 try:
     banner()
+    info()
     x = raw_input(BB+"["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
 
 except NameError:
