@@ -24,7 +24,7 @@ if sys.platform == "linux" or sys.platform == "linux2":
 	M = "\033[35;1m"  # Magenta
 
 	# Random Color
-	rand = (BB,YY,GG,WW,RR,CC)
+	rand = (BB,YY,GG,RR,CC)
 	P = random.choice(rand)
 
 elif sys.platform == "win32":
@@ -148,13 +148,13 @@ except ImportError:
 
 try:
     banner()
-    x = raw_input(BB+"["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
+    x = raw_input(YY+"["+WW+"+"+YY+"] "+GG+"String"+YY+": "+W)
 
 except NameError:
 	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
 	quit()
 
-print (BB+"["+WW+"!"+BB+"] "+GG+"Generate Hash        :"+YY+" Please Wait!!!"+W)
+print (YY+"["+WW+"!"+YY+"] "+GG+"Generate Hash        :"+YY+" Please Wait!!!"+W)
 time.sleep(0.5)
 
 # mysql1323
@@ -362,8 +362,7 @@ fhsp = m25.encrypt(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
-sys.exit()
- 
+
 try:
 	if sys.argv[1] == "-u":
 		Update()
