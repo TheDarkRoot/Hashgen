@@ -1,4 +1,9 @@
+#! usr/bin/python2
+
 import sys , hashlib , zlib , time , random , os , time , binascii
+
+from urllib import urlopen, urlencode
+from re import search
 
 # Color
 if sys.platform == "linux" or sys.platform == "linux2":
@@ -119,10 +124,10 @@ def info():
 
 def Update():
 	if sys.platform == "linux" or sys.platform == "linux2":
-		print (BB+" 0={"+WW+" Update wordlist. "+BB+"}=0\n")
+		print (BB+" 0={"+WW+" Update Hashgen. "+BB+"}=0\n")
 		time.sleep(1)
 
-		print (BB+"["+WW+"="+BB+"] "+GG+"Remove old wordlist.")
+		print (BB+"["+WW+"="+BB+"] "+GG+"Remove old Hashgen.")
 		os.system("rm -rf Hashgen.py")
 		time.sleep(1)
 
