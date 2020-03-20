@@ -51,6 +51,15 @@ except ImportError:
 	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
         sys.exit()
 
+try:
+	if sys.argv[1] == "-u":
+		Update()
+	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+		info()
+	else:
+		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+		sys.exit()
+
 def banner():
     print (CC+'\n              Hash Generator'+GG+' v1.0.0')
     print (P+'  #      #'+WW+' #########################################')
@@ -65,7 +74,7 @@ def banner():
  
 def info():
     print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
-    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Name     "+CC+":"+WW+" Hashgen"+GG+"                               |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Name     "+CC+":"+WW+" Hashgen"+GG+"                              |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Code     "+CC+":"+WW+" Python2"+GG+"                              |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Version  "+CC+":"+WW+" v1.0.0 (Alpha)"+GG+"                       |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Author   "+CC+":"+WW+" TheDarkRoot"+GG+"                          |")
@@ -355,15 +364,6 @@ fhsp = m25.encrypt(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.")
-
-try:
-	if sys.argv[1] == "-u":
-		Update()
-	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
-		info()
-	else:
-		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
-		sys.exit()
 
 except IndexError:
 	sys.exit()
