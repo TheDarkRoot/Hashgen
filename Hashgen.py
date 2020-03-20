@@ -132,7 +132,8 @@ def Update():
 		sys.exit()
 
 try:
-	import passlib , progressbar
+	import progressbar , passlib
+    
 except ImportError:
         banner()
 	time.sleep(0.5)
@@ -371,4 +372,7 @@ try:
 	else:
 		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
 		sys.exit()
+
+except IndexError:
+	sys.exit()
 
