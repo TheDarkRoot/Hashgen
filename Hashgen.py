@@ -142,12 +142,7 @@ def Update():
 try:
     banner()
     x = raw_input(BB+"["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
-
-except NameError:
-	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
-	quit()
-
-try:
+    
 	if sys.argv[1] == "-u":
 		Update()
 	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
@@ -155,6 +150,10 @@ try:
 	else:
 		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
 		sys.exit()
+
+except NameError:
+	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
+	quit()
 
 print (BB+"["+WW+"!"+BB+"] "+GG+"Generate Hash        :"+YY+" Please Wait!!!"+W)
 time.sleep(0.5)
