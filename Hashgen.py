@@ -67,7 +67,7 @@ def banner():
     print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
     print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
     print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
-    print (P+"              python2 "+sys.argv[0]+" --info\n"+W)
+    print (P+"              python2 "+sys.argv[1]+" --info\n"+W)
  
 def info():
     print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
@@ -146,7 +146,7 @@ def Update():
 		sys.exit()
 
 try:
-    info()
+    banner()
     x = raw_input(BB+"["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
 
 except NameError:
