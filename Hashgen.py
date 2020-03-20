@@ -142,7 +142,7 @@ def Update():
  
 try:
     banner()
-    x = raw_input(BB+"\n["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
+    x = raw_input(BB+"["+WW+"+"+BB+"] "+GG+"String"+BB+": "+W)
 
 except NameError:
 	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
