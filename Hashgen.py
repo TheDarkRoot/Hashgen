@@ -355,6 +355,7 @@ fhsp = m25.encrypt(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.")
+print (YY+"\n")
 sys.exit()
  
 try:
