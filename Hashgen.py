@@ -51,15 +51,6 @@ except ImportError:
 	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
         sys.exit()
 
-try:
-	if sys.argv[1] == "-u":
-		Update()
-	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
-		info()
-	else:
-		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
-		sys.exit()
-
 def banner():
     print (CC+'\n              Hash Generator'+GG+' v1.0.0')
     print (P+'  #      #'+WW+' #########################################')
@@ -155,6 +146,15 @@ try:
 except NameError:
 	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
 	quit()
+
+try:
+	if sys.argv[1] == "-u":
+		Update()
+	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+		info()
+	else:
+		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+		sys.exit()
 
 print (BB+"["+WW+"!"+BB+"] "+GG+"Generate Hash        :"+YY+" Please Wait!!!"+W)
 time.sleep(0.5)
