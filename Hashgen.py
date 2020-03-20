@@ -146,7 +146,7 @@ except ImportError:
 	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
         sys.exit()
 
-def hash():
+try:
     banner()
     x = raw_input(YY+"["+WW+"+"+YY+"] "+GG+"String"+YY+": "+W)
 
@@ -372,6 +372,7 @@ try:
 		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
 		sys.exit()
 
+
 except IndexError:
-	hash()
+    banner()
 
