@@ -46,6 +46,7 @@ elif sys.platform == "win32":
 try:
 	import passlib , progressbar
 except ImportError:
+        banner()
 	time.sleep(0.5)
         print (BB+"["+WW+"="+BB+"] "+GG+"installing module "+RR+"progressbar, passlib.\n"+W)
 
