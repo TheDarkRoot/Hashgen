@@ -1,4 +1,4 @@
-import sys , hashlib , zlib , time , random , os , time
+import sys , hashlib , zlib , time , random , os , time , binascii
 
 # Color
 if sys.platform == "linux" or sys.platform == "linux2":
