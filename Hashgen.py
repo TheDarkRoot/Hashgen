@@ -1,6 +1,6 @@
 #! usr/bin/python2
 
-import sys , hashlib , zlib , time , random , os , time , binascii
+import sys , hashlib , time , os , random , binascii , zlib
 
 from urllib import urlopen, urlencode
 from re import search
