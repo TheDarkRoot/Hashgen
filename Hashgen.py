@@ -366,3 +366,6 @@ try:
 		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
 		sys.exit()
 
+except IndexError:
+	sys.exit()
+
