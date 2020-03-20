@@ -43,20 +43,6 @@ elif sys.platform == "win32":
 	C = ''  # Cyan
 	P = ''  # Random Color
 
-try:
-	import passlib , progressbar
-except ImportError:
-        banner()
-	time.sleep(0.5)
-        print (BB+"["+WW+"="+BB+"] "+GG+"installing module "+RR+"progressbar, passlib.\n"+W)
-
-	os.system("pip2 install --upgrade pip")
-	os.system("pip2 install passlib")
-	os.system("pip2 install progressbar")
-
-	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
-        sys.exit()
-
 def banner():
     print (CC+'\n              Hash Generator'+GG+' v1.0.0')
     print (P+'  #      #'+WW+' #########################################')
@@ -67,7 +53,7 @@ def banner():
     print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
     print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
     print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
-    print (P+"              python2 "+sys.argv[1]+" --info\n"+W)
+    print (P+"              python2 "+sys.argv[0]+" --info\n"+W)
  
 def info():
     print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
@@ -144,6 +130,20 @@ def Update():
 	else:
 		print ("Sorry, Hashgen update feature is only available on linux platform.\n")
 		sys.exit()
+
+try:
+	import passlib , progressbar
+except ImportError:
+        banner()
+	time.sleep(0.5)
+        print (BB+"["+WW+"="+BB+"] "+GG+"installing module "+RR+"progressbar, passlib.\n"+W)
+
+	os.system("pip2 install --upgrade pip")
+	os.system("pip2 install passlib")
+	os.system("pip2 install progressbar")
+
+	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
+        sys.exit()
 
 try:
     banner()
