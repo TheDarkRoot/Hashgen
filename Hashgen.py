@@ -62,7 +62,7 @@ def banner():
     print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
     print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
     print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
-    print (P+"            python2 "+sys.argv[0]+" --info\n"+W)
+    print (P+"              python2 "+sys.argv[0]+" --info\n"+W)
  
 def info():
     print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
@@ -365,7 +365,4 @@ try:
 	else:
 		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
 		sys.exit()
-
-except IndexError:
-    banner()
 
