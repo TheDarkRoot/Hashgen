@@ -147,8 +147,17 @@ except ImportError:
         sys.exit()
 
 try:
+	if sys.argv[1] == "-u":
+		Update()
+	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+		info()
+	else:
+		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+		sys.exit()
+
+try:
     banner()
-    x = raw_input(YY+"["+WW+"+"+YY+"] "+GG+"String"+YY+": "+W)
+    x = raw_input(CC+"["+WW+"~"+CC+"] "+GG+"String"+CC+": "+W)
 
 except NameError:
 	print (RR+"\n["+Ww+"!"+RR+"] "+GG+"use "+WW+"python2.7\n")
@@ -362,16 +371,6 @@ fhsp = m25.encrypt(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
-
-try:
-	if sys.argv[1] == "-u":
-		Update()
-	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
-		info()
-	else:
-		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
-		sys.exit()
-
 
 except IndexError:
     banner()
