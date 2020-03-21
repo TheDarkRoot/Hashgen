@@ -146,16 +146,7 @@ except ImportError:
 	print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
         sys.exit()
 
-try:
-	if sys.argv[1] == "-u":
-		Update()
-	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
-		info()
-	else:
-		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
-		sys.exit()
-
-try:
+def open():
     banner()
     x = raw_input(CC+"["+WW+"~"+CC+"] "+GG+"String"+CC+": "+W)
 
@@ -372,6 +363,15 @@ print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
 
+try:
+	if sys.argv[1] == "-u":
+		Update()
+	elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+		info()
+	else:
+		print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+		sys.exit()
+
 except IndexError:
-    banner()
+    open()
 
