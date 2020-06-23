@@ -373,5 +373,5 @@ try:
 		sys.exit()
 
 except IndexError:
-    banner()
+	sys.exit()
 
