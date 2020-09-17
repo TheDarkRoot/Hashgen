@@ -70,7 +70,7 @@ The author of this project is not responsible for any possible harm caused by th
 > ***Open the terminal and type following commands.***
 ```
 $ pkg update upgrade
-$ pkg install git python2
+$ pkg install python2
 $ git clone https://github.com/TheDarkRoot/Hashgen.git
 $ cd Hashgen
 $ python2 Hashgen.py
