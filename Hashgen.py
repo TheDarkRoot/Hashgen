@@ -63,7 +63,7 @@ def info():
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Author   "+CC+":"+WW+" TheDarkRoot"+GG+"                          |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Email    "+CC+":"+WW+" 7H3D4RKR007@gmail.com"+GG+"                |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Github   "+CC+":"+WW+" https://github.com/TheDarkRoot"+GG+"       |")
-    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Telegram "+CC+":"+WW+" @TDarkRoot (https://t.me/TDarkRoot)"+GG+"  |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Telegram "+CC+":"+WW+" @TheDarkRoot (t.me/TheDarkRoot)"+GG+"      |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Team     "+CC+":"+WW+" TurkHackTeam (www.turkhackteam.org)"+GG+"  |")
     print (GG+" 0{===================================================}0\n")
     print (BB+" ["+RR+"="+BB+"] "+WW+"python2 "+sys.argv[0]+" -u")
