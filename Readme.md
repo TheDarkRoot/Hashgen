@@ -69,16 +69,13 @@ The author of this project is not responsible for any possible harm caused by th
 
 > ***Open the terminal and type following commands.***
 ```
-pkg install git
-```
-```
-pkg install python2
+pkg install git;pkg install python2
 ```
 ```
 git clone https://github.com/TheDarkRoot/Hashgen.git
 ```
 ```
-cd Hashgen
+cd Hashgen;chmod +x Hashgen.py
 ```
 ```
 python2 Hashgen.py
