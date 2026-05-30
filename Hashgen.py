@@ -380,26 +380,65 @@ print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp_hash+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
 
+# Tüm sonuçları tutacak liste
+results = [
+    f"MySQL 3.2.3: {mysql1323}",
+    f"MySQL 4.1: {mysql141}",
+    f"MSSQL 2000: {mssql2000}",
+    f"MSSQL 2005: {mssql2005}",
+    f"MD4: {md4}",
+    f"MD5: {md5}",
+    f"SHA1: {sha1}",
+    f"SHA224: {sha224}",
+    f"SHA256: {sha256}",
+    f"SHA384: {sha384}",
+    f"SHA512: {sha512}",
+    f"RIPEMD160: {ripemd160}",
+    f"WHIRLPOOL: {whirlpool}",
+    f"CRC32: {crc32}",
+    f"ADLER32: {adler32}",
+    f"DES Crypt: {des}",
+    f"BSDi Crypt: {bsdi}",
+    f"BIGCrypt: {big}",
+    f"Crypt16: {crypt16}",
+    f"MD5 Crypt: {md5_crypt_hash}",
+    f"SHA1 Crypt: {sha1_crypt_hash}",
+    f"SHA256 Crypt: {sha256_crypt_hash}",
+    f"SHA512 Crypt: {sha512_crypt_hash}",
+    f"Sun MD5 Crypt: {sun_md5_crypt_hash}",
+    f"Apr MD5 Crypt: {apr_md5_crypt_hash}",
+    f"PHPASS: {phpass_hash}",
+    f"CTA PBKDF2 SHA1: {cta_pbkdf2_sha1_hash}",
+    f"Dlitz PBDKF2 SHA1: {dlitz_pbkdf2_sha1_hash}",
+    f"Atlassian's PBKDF2: {atl_pbkdf2_sha1_hash}",
+    f"Django PBKDF2 SHA1: {django_sha1_hash}",
+    f"Django PBKDF2 SHA256: {django_sha256_hash}",
+    f"Grub's PBKDF2: {grup_pbkdf2_sha512_hash}",
+    f"SCRAM Hash: {scram_hash}",
+    f"BSD nthash: {bsd_nthash_hash}",
+    f"Oracle11: {oracle11_hash}",
+    f"LanManager Hash: {lmhash_val}",
+    f"Windows NT-Hash: {nthash_val}",
+    f"Cisco Type 7: {cisco_hash}",
+    f"FHSP: {fhsp_hash}"
+]
+
 # ... (Diğer tüm hash yazdırma print'leri bittikten sonra en alta bunu ekle) ...
 
 # Dosyaya kaydetme seçeneği
-print(YY + "[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
+print(YY + "\n[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
 save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " + W).lower()
 
 if save_choice == 'y':
-    filename = f"{x}.txt" # Kelimeyi dosya adı yapar
+    # Dosya isminde yasaklı karakterleri temizle (Sadece harf ve rakam bırak)
+    safe_name = "".join([c for c in x if c.isalnum() or c in (' ', '_', '-')])
+    filename = f"{safe_name}.txt"
+    
     try:
         with open(filename, "w", encoding="utf-8") as f:
-            f.write(f"String: {x}\n")
-            f.write("-" * 30 + "\n")
-            # Burada tüm hash değişkenlerini dosyaya yazdırıyoruz
-            f.write(f"MySQL 3.2.3: {mysql1323}\n")
-            f.write(f"MySQL 4.1: {mysql141}\n")
-            f.write(f"MSSQL 2000: {mssql2000}\n")
-            f.write(f"MSSQL 2005: {mssql2005}\n")
-            # ... (Diğer tüm hash değişkenlerini buraya bu şekilde ekleyebilirsin)
-        print(GG + "\n[" + WW + "+" + GG + "] Results saved as " + filename + W)
+            f.write(f"String: {x}\n" + "="*30 + "\n")
+            for item in results:
+                f.write(item + "\n")
+        print(GG + "[" + WW + "+" + GG + "] Saved: " + filename + W)
     except Exception as e:
-        print(RR + "\n[" + WW + "!" + RR + "] Error saving file: " + str(e) + W)
-
-print(YY + "[" + GG + "*" + YY + "] " + GG + "Success generate all hash.\n")
+        print(RR + "[" + WW + "!" + RR + "] Error: " + str(e) + W)
