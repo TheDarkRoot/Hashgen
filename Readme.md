@@ -1,5 +1,5 @@
 <p align="center"><a href="https://turkhackteam.org"><img src="https://raw.githubusercontent.com/TheDarkRoot/FileStore/master/Images/TheDarkRoot/Banner.png" width="250"></a></p>
-<h2 align="center"><b>Hashgen v1.0.0 (Alpha)</b></h2>
+<h2 align="center"><b>Hashgen v1.2.7 (Alpha)</b></h2>
 <h4 align="center">Generate more 39 type hash.</h4>
 </p>
 <p align="center"><a href="center"><a href="https://t.me/TheDarkRoot"><img src="https://raw.githubusercontent.com/TheDarkRoot/FileStore/master/Images/TheDarkRoot/Telegram.png" width="30"></a>     <a href="center"><a href="https://instagram.com/TheDarkRoot"><img src="https://raw.githubusercontent.com/TheDarkRoot/FileStore/master/Images/TheDarkRoot/Instagram.png" width="30"></a>     <a href="center"><a href="https://twitter.com/TDarkRoot"><img src="https://raw.githubusercontent.com/TheDarkRoot/FileStore/master/Images/TheDarkRoot/Twitter.png" width="30"></a>     <a href="https://github.com/CiKu370/hash-generator"><img src="https://raw.githubusercontent.com/TheDarkRoot/FileStore/master/Images/TheDarkRoot/Github.png" width="30"></a></p>
@@ -69,7 +69,7 @@ The author of this project is not responsible for any possible harm caused by th
 
 > ***Open the terminal and type following commands.***
 ```
-pkg install git -y;pkg install python2 -y
+pkg install git -y;pkg install python3 -y
 ```
 ```
 git clone https://github.com/TheDarkRoot/Hashgen.git
@@ -78,7 +78,7 @@ git clone https://github.com/TheDarkRoot/Hashgen.git
 cd Hashgen;chmod +x Hashgen.py
 ```
 ```
-python2 Hashgen.py
+python3 Hashgen.py
 ```
 
 # Screenshot
