@@ -39,7 +39,7 @@ def banner():
     print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
     print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
     print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
-    print (P+"               python "+sys.argv[0]+" --info\n"+W)
+    print (P+"              python3 "+sys.argv[0]+" --info\n"+W)
  
 def info():
     print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
@@ -96,25 +96,28 @@ def info():
     print (YY+" ["+WW+"39"+YY+"] "+CC+"FHSP\n"+W)
 
 def Update():
-    if sys.platform == "linux" or sys.platform == "linux2":
-        print (BB+" 0={"+WW+" Update Hashgen. "+BB+"}=0\n")
-        time.sleep(1)
-
-        print (BB+"["+WW+"="+BB+"] "+GG+"Remove old Hashgen.")
-        os.system("rm -rf Hashgen.py")
-        time.sleep(1)
-
-        print (BB+"["+WW+"="+BB+"] "+GG+"Downloading Hashgen.")
-        time.sleep(1)
-
-        print (RR+"["+WW+"*"+RR+"] "+RR+"Curl Started...\n"+W)
-
-        os.system("curl https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.py")
-
-        print (RR+"\n["+WW+"*"+RR+"] "+GG+"Download finish.\n"+W)
+    if sys.platform.startswith("linux"): # Daha kısa bir kontrol
+        print (BB+" 0={"+WW+" Updating Hashgen... "+BB+"}=0\n")
+        
+        # 1. Eski dosyayı silme, önce yeni dosyayı farklı bir isimle indir
+        print (BB+"["+WW+"="+BB+"] "+GG+"Downloading new version...")
+        # -s sessiz mod, -o çıktı dosyası
+        status = os.system("curl -s https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.new.py")
+        
+        # 2. İndirme başarılı mı kontrol et
+        if status == 0:
+            print (BB+"["+WW+"="+BB+"] "+GG+"Download finished. Replacing files...")
+            # Eski dosyanın yedeğini alıp yenisini onunla değiştir (veya basitçe rename et)
+            os.system("mv Hashgen.new.py Hashgen.py")
+            print (RR+"\n["+WW+"*"+RR+"] "+GG+"Update successfully completed!\n"+W)
+        else:
+            print (RR+"\n["+WW+"!"+RR+"] "+GG+"Update failed! Could not download the new file.\n"+W)
+            if os.path.exists("Hashgen.new.py"):
+                os.remove("Hashgen.new.py") # Başarısız olduysa geçici dosyayı temizle
+        
         sys.exit()
     else:
-        print ("Sorry, Hashgen update feature is only available on linux platform.\n")
+        print (RR+"["+WW+"!"+RR+"] "+GG+"Update feature is only for Linux/Termux."+W)
         sys.exit()
 
 try:
@@ -122,13 +125,20 @@ try:
 except ImportError:
     banner()
     time.sleep(0.5)
-    print (BB+"["+WW+"="+BB+"] "+GG+"installing module "+RR+"progressbar, passlib.\n"+W)
+    print (BB+"["+WW+"="+BB+"] "+GG+"Installing missing modules: "+RR+"progressbar, passlib.\n"+W)
 
-    os.system("pip3 install --upgrade pip")
-    os.system("pip3 install passlib")
-    os.system("pip3 install progressbar2") # progressbar2 is the maintained python 3 version
+    # Kurulum komutlarını çalıştır ve sonuçlarını (0 veya hata kodu) değişkene ata
+    pip_update = os.system("pip3 install --upgrade pip")
+    passlib_install = os.system("pip3 install passlib")
+    prog_install = os.system("pip3 install progressbar2") # progressbar2 is the maintained python 3 version
 
-    print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
+    # Eğer tüm kurulumlar 0 (başarılı) döndürdüyse
+    if passlib_install == 0 and prog_install == 0:
+        print (BB+"\n["+WW+"="+BB+"] "+GG+"Install success, please run the program again.\n"+W)
+    else:
+        # Eğer kurulumlardan biri bile başarısız olduysa
+        print (RR+"\n["+WW+"!"+RR+"] "+YY+"Installation failed! Please check your internet connection or pip permissions.\n"+W)
+    
     sys.exit()
 
 try:
