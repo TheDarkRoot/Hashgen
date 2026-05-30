@@ -426,19 +426,58 @@ results = [
 # ... (Diğer tüm hash yazdırma print'leri bittikten sonra en alta bunu ekle) ...
 
 # Dosyaya kaydetme seçeneği
-print(YY + "\n[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
+print(YY + "[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
 save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " + W).lower()
 
 if save_choice == 'y':
-    # Dosya isminde yasaklı karakterleri temizle (Sadece harf ve rakam bırak)
-    safe_name = "".join([c for c in x if c.isalnum() or c in (' ', '_', '-')])
-    filename = f"{safe_name}.txt"
-    
+    # Dosya adındaki geçersiz karakterleri temizle
+    safe_x = "".join([c for c in x if c.isalnum() or c in (' ', '_', '-')])
+    filename = f"{safe_x}.txt"
     try:
         with open(filename, "w", encoding="utf-8") as f:
-            f.write(f"String: {x}\n" + "="*30 + "\n")
-            for item in results:
-                f.write(item + "\n")
-        print(GG + "[" + WW + "+" + GG + "] Saved: " + filename + W)
+            f.write(f"String: {x}\n")
+            f.write("-" * 30 + "\n")
+            f.write(f"01. MySQL 3.2.3       : {mysql1323}\n")
+            f.write(f"02. MySQL 4.1         : {mysql141}\n")
+            f.write(f"03. MSSQL 2000        : {mssql2000}\n")
+            f.write(f"04. MSSQL 2005        : {mssql2005}\n")
+            f.write(f"05. MD4               : {md4}\n")
+            f.write(f"06. MD5               : {md5}\n")
+            f.write(f"07. SHA1              : {sha1}\n")
+            f.write(f"08. SHA224            : {sha224}\n")
+            f.write(f"09. SHA256            : {sha256}\n")
+            f.write(f"10. SHA384            : {sha384}\n")
+            f.write(f"11. SHA512            : {sha512}\n")
+            f.write(f"12. RIPEMD160         : {ripemd160}\n")
+            f.write(f"13. WHIRLPOOL         : {whirlpool}\n")
+            f.write(f"14. CRC32             : {crc32}\n")
+            f.write(f"15. ADLER32           : {adler32}\n")
+            f.write(f"16. DES Crypt         : {des}\n")
+            f.write(f"17. BSDi Crypt        : {bsdi}\n")
+            f.write(f"18. BIGCrypt          : {big}\n")
+            f.write(f"19. Crypt16           : {crypt16}\n")
+            f.write(f"20. MD5 Crypt         : {md5_crypt_hash}\n")
+            f.write(f"21. SHA1 Crypt        : {sha1_crypt_hash}\n")
+            f.write(f"22. SHA256 Crypt      : {sha256_crypt_hash}\n")
+            f.write(f"23. SHA512 Crypt      : {sha512_crypt_hash}\n")
+            f.write(f"24. Sun MD5 Crypt     : {sun_md5_crypt_hash}\n")
+            f.write(f"25. Apr MD5 Crypt     : {apr_md5_crypt_hash}\n")
+            f.write(f"26. PHPASS            : {phpass_hash}\n")
+            f.write(f"27. CTA PBKDF2 SHA1   : {cta_pbkdf2_sha1_hash}\n")
+            f.write(f"28. Dlitz PBDKF2 SHA1 : {dlitz_pbkdf2_sha1_hash}\n")
+            f.write(f"29. Atlassian's PBKDF2: {atl_pbkdf2_sha1_hash}\n")
+            f.write(f"30. Django PBKDF2 SHA1: {django_sha1_hash}\n")
+            f.write(f"31. Django PBKDF2 SHA256: {django_sha256_hash}\n")
+            f.write(f"32. Grub's PBKDF2     : {grup_pbkdf2_sha512_hash}\n")
+            f.write(f"33. SCRAM Hash        : {scram_hash}\n")
+            f.write(f"34. BSD nthash        : {bsd_nthash_hash}\n")
+            f.write(f"35. Oracle11          : {oracle11_hash}\n")
+            f.write(f"36. LanManager Hash   : {lmhash_val}\n")
+            f.write(f"37. Windows NT-Hash   : {nthash_val}\n")
+            f.write(f"38. Cisco Type 7      : {cisco_hash}\n")
+            f.write(f"39. FHSP              : {fhsp_hash}\n")
+        print(GG + "\n[" + WW + "+" + GG + "] Results saved as " + filename + W)
     except Exception as e:
-        print(RR + "[" + WW + "!" + RR + "] Error: " + str(e) + W)
+        print(RR + "\n[" + WW + "!" + RR + "] Error saving file: " + str(e) + W)
+
+print(YY + "[" + GG + "*" + YY + "] " + GG + "Success generate all hash.\n")
