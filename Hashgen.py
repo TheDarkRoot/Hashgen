@@ -39,13 +39,13 @@ def banner():
     print (P+'  #      # #    # #    # #    # #    # #      #   ## ')
     print (P+'  #      # #    #  ####  #    #  ####  ###### #    # ')
     print (WW+'  #################['+CC+' TheDarkRoot'+WW+' ]################## ')
-    print (P+"              python3 "+sys.argv[0]+" --info\n"+W)
+    print (P+"               python "+sys.argv[0]+" --info\n"+W)
  
 def info():
     print (GG+"\n 0{======================"+WW+" INFO "+GG+"=======================}0")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Name     "+CC+":"+WW+" Hashgen"+GG+"                               |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Code     "+CC+":"+WW+" Python3"+GG+"                               |")
-    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Version  "+CC+":"+WW+" v1.0.0 (Alpha)"+GG+"                        |")
+    print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Version  "+CC+":"+WW+" v1.2.7 (Alpha)"+GG+"                        |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Author   "+CC+":"+WW+" TheDarkRoot"+GG+"                           |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Email    "+CC+":"+WW+" 7H3D4RKR007@gmail.com"+GG+"                |")
     print (GG+" |"+BB+" ["+RR+"="+BB+"] "+WW+"Github   "+CC+":"+WW+" https://github.com/TheDarkRoot"+GG+"       |")
@@ -129,6 +129,18 @@ except ImportError:
     os.system("pip3 install progressbar2") # progressbar2 is the maintained python 3 version
 
     print (BB+"\n["+WW+"="+BB+"] "+GG+"install success, run program again.\n"+W)
+    sys.exit()
+
+try:
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "-u":
+            Update()
+        elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
+            info()
+        else:
+            print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
+            sys.exit()
+except IndexError:
     sys.exit()
 
 try:
@@ -356,15 +368,3 @@ fhsp_hash = m25.hash(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp_hash+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
-
-try:
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "-u":
-            Update()
-        elif sys.argv[1] == "-i" or sys.argv[1] == "--info":
-            info()
-        else:
-            print (RR+"["+WW+"!"+RR+"] "+GG+"Command Error!!!"+W)
-            sys.exit()
-except IndexError:
-    sys.exit()
