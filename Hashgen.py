@@ -384,26 +384,33 @@ print(YY + "\n[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)
 save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " + W).lower()
 
 if save_choice == 'y':
-    # Dosya adındaki geçersiz karakterleri temizle
     safe_x = "".join([c for c in x if c.isalnum() or c in (' ', '_', '-')])
     filename = f"{safe_x}.txt"
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write(f"String: {x}\n")
             f.write("-" * 30 + "\n")
+            
+            # Değişken tanımlı mı kontrol ederek dosyaya yaz
             f.write(f"01. MySQL 3.2.3       : {mysql1323}\n")
             f.write(f"02. MySQL 4.1         : {mysql141}\n")
             f.write(f"03. MSSQL 2000        : {mssql2000}\n")
             f.write(f"04. MSSQL 2005        : {mssql2005}\n")
-            f.write(f"05. MD4               : {md4}\n")
+            
+            # MD4 kontrolü
+            f.write(f"05. MD4               : {md4 if 'md4' in locals() else 'Not Supported'}\n")
+            
             f.write(f"06. MD5               : {md5}\n")
             f.write(f"07. SHA1              : {sha1}\n")
             f.write(f"08. SHA224            : {sha224}\n")
             f.write(f"09. SHA256            : {sha256}\n")
             f.write(f"10. SHA384            : {sha384}\n")
             f.write(f"11. SHA512            : {sha512}\n")
-            f.write(f"12. RIPEMD160         : {ripemd160}\n")
-            f.write(f"13. WHIRLPOOL         : {whirlpool}\n")
+            
+            # RIPEMD160 ve WHIRLPOOL kontrolü
+            f.write(f"12. RIPEMD160         : {ripemd160 if 'ripemd160' in locals() else 'Not Supported'}\n")
+            f.write(f"13. WHIRLPOOL         : {whirlpool if 'whirlpool' in locals() else 'Not Supported'}\n")
+            
             f.write(f"14. CRC32             : {crc32}\n")
             f.write(f"15. ADLER32           : {adler32}\n")
             f.write(f"16. DES Crypt         : {des}\n")
@@ -430,6 +437,7 @@ if save_choice == 'y':
             f.write(f"37. Windows NT-Hash   : {nthash_val}\n")
             f.write(f"38. Cisco Type 7      : {cisco_hash}\n")
             f.write(f"39. FHSP              : {fhsp_hash}\n")
+            
         print(GG + "\n[" + WW + "+" + GG + "] Results saved as " + filename + W)
     except Exception as e:
         print(RR + "\n[" + WW + "!" + RR + "] Error saving file: " + str(e) + W)
