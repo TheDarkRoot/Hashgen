@@ -379,3 +379,27 @@ fhsp_hash = m25.hash(x)
 print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp_hash+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
+
+# ... (Diğer tüm hash yazdırma print'leri bittikten sonra en alta bunu ekle) ...
+
+# Dosyaya kaydetme seçeneği
+print(YY + "[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
+save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " + W).lower()
+
+if save_choice == 'y':
+    filename = f"{x}.txt" # Kelimeyi dosya adı yapar
+    try:
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(f"String: {x}\n")
+            f.write("-" * 30 + "\n")
+            # Burada tüm hash değişkenlerini dosyaya yazdırıyoruz
+            f.write(f"MySQL 3.2.3: {mysql1323}\n")
+            f.write(f"MySQL 4.1: {mysql141}\n")
+            f.write(f"MSSQL 2000: {mssql2000}\n")
+            f.write(f"MSSQL 2005: {mssql2005}\n")
+            # ... (Diğer tüm hash değişkenlerini buraya bu şekilde ekleyebilirsin)
+        print(GG + "\n[" + WW + "+" + GG + "] Results saved as " + filename + W)
+    except Exception as e:
+        print(RR + "\n[" + WW + "!" + RR + "] Error saving file: " + str(e) + W)
+
+print(YY + "[" + GG + "*" + YY + "] " + GG + "Success generate all hash.\n")
