@@ -5,8 +5,11 @@ import urllib.request, urllib.parse
 from re import search
 
 # Color
-if sys.platform == "linux" or sys.platform == "linux2":
-
+if sys.platform == "win32":
+    # Windows için renksiz (ANSI desteklemeyen eski sürümler için)
+    BB = YY = GG = WW = RR = CC = MM = B = Y = G = W = R = C = P = ''
+else:
+    # Linux, Termux (Android), macOS ve diğerleri için renkli
     BB = "\033[34;1m" # Blue Light
     YY = "\033[33;1m" # Yellow Light
     GG = "\033[32;1m" # Green Light
@@ -25,22 +28,6 @@ if sys.platform == "linux" or sys.platform == "linux2":
     # Random Color
     rand = (BB,YY,GG,RR,CC)
     P = random.choice(rand)
-
-elif sys.platform == "win32":
-
-    BB = '' # Blue Light
-    YY = '' # Yellow Light
-    GG = '' # Green Light
-    WW = '' # White Light
-    RR = '' # Red Light
-    CC = '' # Cyan Light
-    B = ''  # Blue
-    Y = ''  # Yellow
-    G = ''  # Green
-    W = ''  # White
-    R = ''  # Red
-    C = ''  # Cyan
-    P = ''  # Random Color
 
 def banner():
     print (CC+'\n              Hash Generator'+GG+' v1.0.0')
