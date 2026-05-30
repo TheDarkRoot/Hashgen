@@ -380,8 +380,7 @@ print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp_hash+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
 
-# Dosyaya kaydetme seçeneği
-print(YY + "[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
+print(YY + "\n[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
 save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " + W).lower()
 
 if save_choice == 'y':
