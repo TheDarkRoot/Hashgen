@@ -96,28 +96,37 @@ def info():
     print (YY+" ["+WW+"39"+YY+"] "+CC+"FHSP\n"+W)
 
 def Update():
-    if sys.platform.startswith("linux"): # Daha kısa bir kontrol
-        print (BB+" 0={"+WW+" Updating Hashgen... "+BB+"}=0\n")
+    # Termux ve Linux platformlarını garanti altına almak için linux ile başlama kontrolü
+    if sys.platform.startswith("linux"):
+        print(BB + " 0={" + WW + " Updating Hashgen... " + BB + "}=0\n")
         
-        # 1. Eski dosyayı silme, önce yeni dosyayı farklı bir isimle indir
-        print (BB+"["+WW+"="+BB+"] "+GG+"Downloading new version...")
-        # -s sessiz mod, -o çıktı dosyası
-        status = os.system("curl -s https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.new.py")
+        # 1. Yeni dosyayı geçici bir isme indir
+        print(BB + "[" + WW + "=" + BB + "] " + GG + "Downloading new version...")
         
-        # 2. İndirme başarılı mı kontrol et
+        # -s (sessiz), -f (hata durumunda fail), -L (yönlendirmeleri takip et)
+        cmd = "curl -s -L https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.new.py"
+        status = os.system(cmd)
+        
+        # 2. İndirme başarılı mı kontrol et (status 0 ise başarılıdır)
         if status == 0:
-            print (BB+"["+WW+"="+BB+"] "+GG+"Download finished. Replacing files...")
-            # Eski dosyanın yedeğini alıp yenisini onunla değiştir (veya basitçe rename et)
+            print(BB + "[" + WW + "=" + BB + "] " + GG + "Download finished. Replacing files...")
+            
+            # Eski Hashgen.py dosyasının üzerine yeni dosyayı taşı
+            # os.replace (veya mv komutu) burada işimizi görür
             os.system("mv Hashgen.new.py Hashgen.py")
-            print (RR+"\n["+WW+"*"+RR+"] "+GG+"Update successfully completed!\n"+W)
+            
+            print(RR + "\n[" + WW + "*" + RR + "] " + GG + "Update successfully completed!\n" + W)
         else:
-            print (RR+"\n["+WW+"!"+RR+"] "+GG+"Update failed! Could not download the new file.\n"+W)
+            print(RR + "\n[" + WW + "!" + RR + "] " + GG + "Update failed! Could not download the new file.\n" + W)
+            
+            # Başarısız olduysa geçici dosyayı temizle
             if os.path.exists("Hashgen.new.py"):
-                os.remove("Hashgen.new.py") # Başarısız olduysa geçici dosyayı temizle
+                os.remove("Hashgen.new.py")
         
         sys.exit()
     else:
-        print (RR+"["+WW+"!"+RR+"] "+GG+"Update feature is only for Linux/Termux."+W)
+        # Platform Linux değilse
+        print(RR + "[" + WW + "!" + RR + "] " + GG + "Update feature is only for Linux/Termux." + W)
         sys.exit()
 
 try:
