@@ -385,7 +385,7 @@ save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " 
 
 if save_choice == 'y':
     safe_x = "".join([c for c in x if c.isalnum() or c in (' ', '_', '-')])
-    filename = f"{safe_x}.txt"
+    filename = f"" + WW + {safe_x}.txt + WW + ""
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write(f"String: {x}\n")
