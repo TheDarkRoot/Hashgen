@@ -380,12 +380,12 @@ print (YY+"["+WW+"39"+YY+"]>"+GG+"FHSP                : "+W+fhsp_hash+"\n")
 
 print (YY+"["+GG+"*"+YY+"] "+GG+"Success generate all hash.\n")
 
-print(YY + "[" + WW + "!" + YY + "] " + GG + "Save results to text file? (y/n)")
+print(YY + "[" + WW + "?" + YY + "] " + GG + "Save results to text file? (Y/n)")
 save_choice = input(CC + "[" + WW + "~" + CC + "] " + GG + "Choice" + CC + ": " + W).lower()
 
 if save_choice == 'y':
     safe_x = "".join([c for c in x if c.isalnum() or c in (' ', '_', '-')])
-    filename = f"" + WW + {safe_x}.txt + WW + ""
+    filename = f"{safe_x}.txt"
     try:
         with open(filename, "w", encoding="utf-8") as f:
             f.write(f"String: {x}\n")
@@ -432,7 +432,7 @@ if save_choice == 'y':
             f.write(f"[38] > Cisco Type 7        : {cisco_hash if 'cisco_hash' in locals() else 'Not Supported'}\n")
             f.write(f"[39] > FHSP                : {fhsp_hash if 'fhsp_hash' in locals() else 'Not Supported'}\n")
             
-        print(GG + "\n[" + WW + "+" + GG + "] Results saved as " + filename + W)
+        print(GG + "\n[" + WW + "+" + GG + "] Results saved as "+ WW + "\"" + filename + "\"" + W)
     except Exception as e:
         print(RR + "\n[" + WW + "!" + RR + "] Error saving file: " + str(e) + W)
 
