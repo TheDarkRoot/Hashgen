@@ -432,7 +432,7 @@ if save_choice == 'y':
             f.write(f"[38] > Cisco Type 7        : {cisco_hash if 'cisco_hash' in locals() else 'Not Supported'}\n")
             f.write(f"[39] > FHSP                : {fhsp_hash if 'fhsp_hash' in locals() else 'Not Supported'}\n")
             
-        print(GG + "\n[" + WW + "+" + GG + "] Results saved as "+ WW + "\"" + filename + "\"" + W)
+        print(GG + "\n[" + WW + "+" + GG + "] Results saved as \""+ WW + "" + filename + ""+ GG + "\"" + W)
     except Exception as e:
         print(RR + "\n[" + WW + "!" + RR + "] Error saving file: " + str(e) + W)
 
