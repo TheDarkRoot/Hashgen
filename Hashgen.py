@@ -96,37 +96,31 @@ def info():
     print (YY+" ["+WW+"39"+YY+"] "+CC+"FHSP\n"+W)
 
 def Update():
-    # Termux ve Linux platformlarını garanti altına almak için linux ile başlama kontrolü
-    if sys.platform.startswith("linux"):
-        print(BB + " 0={" + WW + " Updating Hashgen... " + BB + "}=0\n")
+    # Sistemde /proc dizininin veya linux'a özgü bir dizinin varlığını kontrol et
+    # Bu yöntem Termux ve tüm Linux sistemlerinde çalışır
+    is_linux = os.path.exists("/proc") or sys.platform.startswith("linux")
+    
+    if is_linux:
+        print (BB+" 0={"+WW+" Updating Hashgen... "+BB+"}=0\n")
         
-        # 1. Yeni dosyayı geçici bir isme indir
-        print(BB + "[" + WW + "=" + BB + "] " + GG + "Downloading new version...")
-        
-        # -s (sessiz), -f (hata durumunda fail), -L (yönlendirmeleri takip et)
+        print (BB+"["+WW+"="+BB+"] "+GG+"Downloading new version...")
         cmd = "curl -s -L https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.new.py"
         status = os.system(cmd)
         
-        # 2. İndirme başarılı mı kontrol et (status 0 ise başarılıdır)
         if status == 0:
-            print(BB + "[" + WW + "=" + BB + "] " + GG + "Download finished. Replacing files...")
-            
-            # Eski Hashgen.py dosyasının üzerine yeni dosyayı taşı
-            # os.replace (veya mv komutu) burada işimizi görür
+            print (BB+"["+WW+"="+BB+"] "+GG+"Download finished. Replacing files...")
             os.system("mv Hashgen.new.py Hashgen.py")
-            
-            print(RR + "\n[" + WW + "*" + RR + "] " + GG + "Update successfully completed!\n" + W)
+            print (RR+"\n["+WW+"*"+RR+"] "+GG+"Update successfully completed!\n"+W)
         else:
-            print(RR + "\n[" + WW + "!" + RR + "] " + GG + "Update failed! Could not download the new file.\n" + W)
-            
-            # Başarısız olduysa geçici dosyayı temizle
+            print (RR+"\n["+WW+"!"+RR+"] "+GG+"Update failed! Could not download the new file.\n"+W)
             if os.path.exists("Hashgen.new.py"):
                 os.remove("Hashgen.new.py")
         
         sys.exit()
     else:
-        # Platform Linux değilse
-        print(RR + "[" + WW + "!" + RR + "] " + GG + "Update feature is only for Linux/Termux." + W)
+        # Hata ayıklama için platformu yazdırıyoruz
+        print (RR+"["+WW+"!"+RR+"] "+GG+"Update feature is only for Linux/Termux.")
+        print (RR+"["+WW+"!"+RR+"] "+GG+f"Detected platform: {sys.platform}"+W)
         sys.exit()
 
 try:
