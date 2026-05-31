@@ -101,7 +101,7 @@ def Update():
     is_linux = os.path.exists("/proc") or sys.platform.startswith("linux")
     
     if is_linux:
-        print (GG+"["+WW+"↓"+GG+"] Updating Hashgen..."\n")
+        print (GG+"["+WW+"↓"+GG+"] Updating Hashgen...\n"+W)
         
         print (GG+"["+WW+"+"+GG+"] Downloading new version...")
         cmd = "curl -s -L https://raw.githubusercontent.com/TheDarkRoot/Hashgen/master/Hashgen.py -o Hashgen.new.py"
